@@ -25,7 +25,7 @@ namespace A1
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
