@@ -1,0 +1,70 @@
+﻿@model A1.Models.ToolsRequest
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Equipment Request Form</title>
+</head>
+<body>
+    <div>
+        <form asp-action="EquipmentRequestForm" method="post">
+            <div style="color:red" asp-validation-summary="All"></div>
+
+            <div class="form-group row">
+                <label asp-for="Name" class="col-2 col-form-label">Text</label>
+                <div class="col-10">
+                    <input asp-for="Name" class="form-control" type="text" placeholder="First name" id="name">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="Email" class="col-2 col-form-label">Email</label>
+                <div class="col-10">
+                    <input asp-for="Email" class="form-control" type="email" placeholder="Email@Email.com" id="email">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="Phone" for="telephone" class="col-2 col-form-label">Telephone</label>
+                <div class="col-10">
+                    <input asp-for="Phone" class="form-control" type="tel" placeholder="xxx-xxx-xxxx" id="telephone">
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Role" for="role">Role</label>
+                <select asp-for="Role" class="form-control" id="role">
+                    <option>Student</option>
+                    <option>Teacher</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Equipment" for="equipmentType">Equipment Type</label>
+                <select asp-for="Equipment" asp-items="Html.GetEnumSelectList<A1.Models.ToolsRequest.Tools>()">
+                </select>
+            </div>
+            <div class="form-group row">
+                <label asp-for="Details" for="requestDetails" class="col-2 col-form-label">Request Details</label>
+                <div class="col-10">
+                    <textarea asp-for="Details" class="form-control" id="requestDetails" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="Days" for="numOfDays" class="col-2 col-form-label">Number of Days</label>
+                <div class="col-10">
+                    <input asp-for="Days" class="form-control" type="number" value="1" id="numOfDays">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success">Submit Request</button>
+
+
+        </form>
+
+
+
+    </div>
+</body>
+</html>

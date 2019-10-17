@@ -16,27 +16,25 @@ namespace A1.Controllers
             return View();
         }
 
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
 
+        [HttpGet]
+        public IActionResult EquipmentRequestForm()
+        {
             return View();
         }
 
-        public IActionResult Contact()
+        [HttpPost]
+        public IActionResult EquipmentRequestForm(ToolsRequest request)
         {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel
+            if(ModelState.IsValid)
             {
-                RequestId = Activity.Current?.Id
-                ?? HttpContext.TraceIdentifier
-            });
+                Repository.AddResponse(request);
+                return View("ThankYouPage", request);
+            }
+            else
+            {
+                return View();
+            }
         }
 
     }
