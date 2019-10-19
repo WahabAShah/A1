@@ -8,7 +8,7 @@ namespace A1.Models
     public static class Repository
     {
         private static int Id = 0;
-        private static List<ToolsRequest> responses = new List<ToolsRequest>();
+        public static List<ToolsRequest> responses = new List<ToolsRequest>();
 
 
         public static List<Equipment> eList = new List<Equipment>
@@ -50,8 +50,8 @@ namespace A1.Models
             {
                 eList.ElementAt(3).Availbility = false;
             }
-            Id++;
             response.Id = Id;
+            Id++;
             responses.Add(response);
         }
     }

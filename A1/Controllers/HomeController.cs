@@ -35,6 +35,17 @@ namespace A1.Controllers
         }
 
 
+        public IActionResult Requests()
+        {
+            return View(Repository.Responses);
+        }
+
+        public ViewResult Details(int id)
+        {
+            return View("Details", Repository.responses.ElementAt(id));
+        }
+
+
         [HttpPost]
         public IActionResult EquipmentRequestForm(ToolsRequest request)
         {
