@@ -19,7 +19,7 @@ namespace A1.Models
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Please enter your phone number")]
-        //[RegularExpression("/ ^(?:\\(\\d{3}\\)|\\d{3}-)\\d{3}-\\d{4}$/", ErrorMessage = "Please enter phone as XXX-XXX-XXXX")]
+        [RegularExpression("^\\d{3}\\-\\d{3}\\-\\d{4}$", ErrorMessage = "Please enter phone as XXX-XXX-XXXX")]
         public string Phone { get; set; }
         public string Role { get; set; }
 

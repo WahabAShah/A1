@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model A1.Models.ToolsRequest
+@{
+}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Request Details</title>
+</head>
+<body>
+    <h1>Request Details:</h1>
+    <h4>Request ID: @Model.Id</h4>
+    <h4>Requester Name: @Model.Name</h4>
+    <h4>Requester Email: @Model.Email</h4>
+    <h4>Requester Phone: @Model.Phone</h4>
+    <h4>Requester Role: @Model.Role</h4>
+    <h4>Requested Equipment: @Model.Equipment</h4>
+    <h4>Request Details: @Model.Details</h4>
+    <h4>Requested # of Days: @Model.Days</h4>
+
+    <button type="submit" class="btn btn-success">Accept</button>
+    <button type="submit" class="btn btn-danger">Deny</button>
+
+
+</body>
+</html>

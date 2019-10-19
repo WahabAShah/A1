@@ -16,7 +16,7 @@
             <div style="color:red" asp-validation-summary="All"></div>
 
             <div class="form-group row">
-                <label asp-for="Name" class="col-2 col-form-label">Text</label>
+                <label asp-for="Name" class="col-2 col-form-label">Full Name</label>
                 <div class="col-10">
                     <input asp-for="Name" class="form-control" type="text" placeholder="First name" id="name">
                 </div>
@@ -33,28 +33,30 @@
                     <input asp-for="Phone" class="form-control" type="tel" placeholder="xxx-xxx-xxxx" id="telephone">
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group row" style="margin-left:35%">
                 <label asp-for="Role" for="role">Role</label>
-                <select asp-for="Role" class="form-control" id="role">
-                    <option>Student</option>
-                    <option>Teacher</option>
-                </select>
+                <div class="col-5">
+                    <select asp-for="Role" class="form-control" id="role">
+                        <option>Student</option>
+                        <option>Teacher</option>
+                    </select>
+                </div>
             </div>
             <div class="form-group">
                 <label asp-for="Equipment" for="equipmentType">Equipment Type</label>
-                <select asp-for="Equipment" asp-items="Html.GetEnumSelectList<A1.Models.ToolsRequest.Tools>()">
-                </select>
+                 <select asp-for="Equipment" asp-items="Html.GetEnumSelectList<A1.Models.ToolsRequest.Tools>()">
+                 </select>
             </div>
             <div class="form-group row">
-                <label asp-for="Details" for="requestDetails" class="col-2 col-form-label">Request Details</label>
-                <div class="col-10">
+                 <label asp-for="Details" for="requestDetails" class="col-2 col-form-label">Request Details</label>
+                 <div class="col-10">
                     <textarea asp-for="Details" class="form-control" id="requestDetails" rows="3"></textarea>
-                </div>
+                 </div>
             </div>
             <div class="form-group row">
                 <label asp-for="Days" for="numOfDays" class="col-2 col-form-label">Number of Days</label>
                 <div class="col-10">
-                    <input asp-for="Days" class="form-control" type="number" min ="1" value="1" id="numOfDays">
+                    <input asp-for="Days" class="form-control" type="number" min="1" value="1" id="numOfDays">
                 </div>
             </div>
 
