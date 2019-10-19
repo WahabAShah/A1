@@ -23,6 +23,18 @@ namespace A1.Controllers
             return View();
         }
 
+
+        public ViewResult AllEquipment()
+        {
+            return View(Repository.Tools);
+        }
+
+        public ViewResult AvailableEquipment()
+        {
+            return View(Repository.Tools.Where(r => r.Availbility == true));
+        }
+
+
         [HttpPost]
         public IActionResult EquipmentRequestForm(ToolsRequest request)
         {

@@ -30,6 +30,13 @@ namespace A1.Models
         public string Days { get; set; }
 
 
+        
+        //public bool LRented { get; set; }
+        //public bool TRented { get; set; }
+        //public bool PRented { get; set; }
+        //public bool ORented { get; set; }
+
+
         public enum Tools
         {
             Laptop,

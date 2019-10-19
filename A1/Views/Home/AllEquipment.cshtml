@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>All Equipment</title>
+</head>
+<body>
+    <h2>Here is the list of people attending the party</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Type</th>
+                <th scope="col">Description</th>
+                <th scope="col">Availability</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (A1.Models.Equipment r in Model)
+            {
+                <tr scope="row">
+                    <td>@r.EquipmentID</td>
+                    <td>@r.Type</td>
+                    <td>@r.Description</td>
+                    <td>@r.Availbility.ToString()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
